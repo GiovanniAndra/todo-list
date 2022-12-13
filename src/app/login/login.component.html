@@ -1,0 +1,45 @@
+<h1>Login</h1>
+<form action="">
+<div class="form-group col-lg-3">
+  <label class="text-secondary">Username: </label>
+  <input
+    type="text"
+    name="username"
+    class="form-control"
+    placeholder="username"
+    [(ngModel)]="username"
+  />
+  <br />
+</div>
+<div class="form-group col-lg-3">
+  <label class="text-secondary">Password: </label>
+  <input
+    class="form-control"
+    type="password"
+    name="password"
+    placeholder="password"
+    [(ngModel)]="password"
+  />
+  <br />
+</div>
+<div class="button-login">
+  <button
+    id="loginButton"
+    type="button"
+    class="btn btn-secondary"
+    (click)="handleLogin()"
+  >
+    Login
+  </button>
+  <br />
+  <div
+    *ngIf="invalidLogin"
+    class="toast-body align-items-center text-white bg-danger border-0"
+    ole="alert"
+    aria-live="assertive"
+    aria-atomic="true"
+  >
+    <div class="d-flex" id="errorMessage">Invalid Credentials</div>
+  </div>
+</div>
+</form>
